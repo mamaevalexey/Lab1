@@ -11,6 +11,7 @@ public class WordCountApp {
             System.err.println("Usage: WordCountApp <input path> <output path>");
             System.exit(-1);
         }
+
         Job job = Job.getInstance();
         job.setJarByClass(WordCountApp.class);
         job.setJobName("Word count");
@@ -23,6 +24,7 @@ public class WordCountApp {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setNumReduceTasks(2);
+
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
